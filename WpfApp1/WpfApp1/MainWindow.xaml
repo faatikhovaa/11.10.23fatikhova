@@ -17,7 +17,7 @@
         </Grid.ColumnDefinitions>
         <Image Grid.Row="0" Grid.Column="0" Source="/Resources/LOGO_ICO.png"></Image> 
         <TextBlock Grid.Column="1" Foreground="Red" >TechcnicalShop</TextBlock>
-
+        <Frame x:Name="frams" Grid.Column="1" Grid.Row="1"></Frame>
 
 
     </Grid>
