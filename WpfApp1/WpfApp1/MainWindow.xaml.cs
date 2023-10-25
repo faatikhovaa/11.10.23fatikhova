@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,14 @@ namespace WpfApp1
         {
             InitializeComponent();
             frams.Navigate(new Pages.Catalog());
+            //var path = @"C:\\Users\\222126\\Desktop\\Задание магазин техники\";
+            //foreach (var item in App.db.Product.ToArray())
+            //{
+            //    var fullPath = path + item.Image.Trim();
+            //    var imageByte = File.ReadAllBytes(fullPath);
+            //    item.MainImage = imageByte;
+            //}
+            //App.db.SaveChanges();
         }
     }
 }

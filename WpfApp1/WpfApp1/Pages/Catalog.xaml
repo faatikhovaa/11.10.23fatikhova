@@ -9,13 +9,14 @@
       Title="Catalog">
 
     <Grid>
-        <Grid Background="LightGoldenrodYellow">
+        <Grid Background="#FFDDDDDD">
             <Grid.RowDefinitions>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="400"/>
-                <RowDefinition Height="30"/>
+                <RowDefinition Height="32*"/>
+                <RowDefinition Height="379*"/>
+                <RowDefinition Height="39*"/>
             </Grid.RowDefinitions>
-            <ScrollViewer HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center" Grid.Row="1">
+
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center" Grid.RowSpan="3">
                 <WrapPanel x:Name="catalogTB" Grid.Row="1"></WrapPanel>
             </ScrollViewer>
         </Grid>

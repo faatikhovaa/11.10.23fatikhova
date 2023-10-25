@@ -23,3 +23,5 @@ C:\Users\222126\source\repos\11.10.23fatikhova\WpfApp1\WpfApp1\obj\Debug\WpfApp1
 C:\Users\222126\source\repos\11.10.23fatikhova\WpfApp1\WpfApp1\obj\Debug\WpfApp1.pdb
 C:\Users\222126\source\repos\11.10.23fatikhova\WpfApp1\WpfApp1\obj\Debug\Resources\UserControl1.g.cs
 C:\Users\222126\source\repos\11.10.23fatikhova\WpfApp1\WpfApp1\obj\Debug\Resources\UserControl1.baml
+C:\Users\222126\source\repos\11.10.23fatikhova\WpfApp1\WpfApp1\obj\Debug\Pages\Catalog.g.cs
+C:\Users\222126\source\repos\11.10.23fatikhova\WpfApp1\WpfApp1\obj\Debug\Pages\Catalog.baml

@@ -18,7 +18,11 @@
             </Grid.RowDefinitions>
             <TextBlock x:Name="NameTB" Grid.Row="1"></TextBlock>
             <TextBlock x:Name="OtzuvTB" Grid.Row="2"></TextBlock>
-            <TextBlock x:Name="CenaTB" Grid.Row="3"></TextBlock>
+            <StackPanel Grid.Row="3">
+                <TextBlock x:Name="CenaSkidkiTB" TextDecorations="Strikethrough" ></TextBlock>
+                <TextBlock x:Name="CenaTB" ></TextBlock>
+            </StackPanel>
+            
             <Image x:Name="photo" Grid.Column="0" Source="/Resources/image2.jpg" Margin="0,0,3,50" Grid.RowSpan="2"/>
             <Button HorizontalAlignment="Left"  Grid.Row="5" Height="50" Width="100" BorderBrush="White" Background="Red">🗑</Button>
             <Button HorizontalAlignment="Left" Margin="105,1,0,0" Grid.Row="5" Height="50" Width="50" Background="#FFF4EFEF" BorderBrush="White">🤍</Button>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApp1.Companents;
 
 namespace WpfApp1.Resources
 {
@@ -20,22 +22,38 @@ namespace WpfApp1.Resources
     /// </summary>
     public partial class UserControl1 : UserControl
     {
-        public UserControl1(Image _photo, string _name, decimal _otz, decimal _cena)
+        public UserControl1(Product _prod)
         {
             InitializeComponent();
 
-            if (_otz == 0 || _otz == 1)
-            {
-                photo = _photo;
-                NameTB.Text = _name;
-                OtzuvTB.Visibility = Visibility.Hidden;
-                CenaTB.Text = $"{_cena} {(_cena/ _otz):0}";
 
-            }
-
+            photo.Source = GetImageSourse(_prod.MainImage);
+            NameTB.Text = _prod.Title;
+            OtzuvTB.Text = $"*{_prod.AverageRating.ToString("F2")} {_prod.CountFeedBack.Item1} отзыв";
+            CenaSkidkiTB.Text = $"{_prod.Cost.ToString("f2")}";
+            CenaTB.Text = $"{_prod.TotalCost:f2}";
+            CenaSkidkiTB.Visibility = _prod.CostVisibilitr;
+            OtzuvTB.Visibility = _prod.CountFeedBack.Item2;
 
 
 
         }
+        private BitmapImage GetImageSourse(byte[] byteImage)
+        {
+            try
+            {
+                MemoryStream byteStream = new MemoryStream(byteImage);
+                BitmapImage bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.StreamSource = byteStream;
+                bitmapImage.EndInit();
+                return bitmapImage;
+            }
+            catch
+            {
+                return new BitmapImage(new Uri("C:\\Users\\222126\\source\\repos\\11.10.23fatikhova\\WpfApp1\\WpfApp1\\Resources\\LOGO_ICO.png"));
+            }
+            }
+
     }
 }
