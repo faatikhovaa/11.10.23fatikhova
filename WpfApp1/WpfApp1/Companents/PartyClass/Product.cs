@@ -19,11 +19,25 @@ namespace WpfApp1.Companents
                     return Visibility.Visible;
             }
         }
+        public string CostWithDiscount
+        {
+            get
+            {
+                if (Discount == 0)
+                {
+                    return Cost.ToString();
+                }
+                else
+                {
+                    return $"{Cost - Cost * ((decimal)Discount / 100)}";
+                }
+            }
+        }
         public (int, Visibility) CountFeedBack
         {
             get
             {
-                if (Feedback.Count ==0)
+                if (Feedback.Count == 0)
                 {
                     return (0, Visibility.Collapsed);
 

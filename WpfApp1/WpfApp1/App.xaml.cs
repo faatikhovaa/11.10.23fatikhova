@@ -15,5 +15,6 @@ namespace WpfApp1
     public partial class App : Application
     {
         public static HS db = new HS();
+        public static bool isAdmin = false;
     }
 }

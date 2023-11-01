@@ -22,6 +22,7 @@ namespace WpfApp1.Resources
     /// </summary>
     public partial class UserControl1 : UserControl
     {
+        private Product service;
         public UserControl1(Product _prod)
         {
             InitializeComponent();
@@ -55,5 +56,23 @@ namespace WpfApp1.Resources
             }
             }
 
+        private void CreateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Red");
+        }
+
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (service != null)
+            {
+                MessageBox.Show("Удаление запрещенно");
+            }
+            else
+            {
+                App.db.Product.Remove(service);
+                App.db.SaveChanges();
+
+            }
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,15 +25,43 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            frams.Navigate(new Pages.Catalog());
-            //var path = @"C:\\Users\\222126\\Desktop\\Задание магазин техники\";
-            //foreach (var item in App.db.Product.ToArray())
-            //{
-            //    var fullPath = path + item.Image.Trim();
-            //    var imageByte = File.ReadAllBytes(fullPath);
-            //    item.MainImage = imageByte;
-            //}
-            //App.db.SaveChanges();
+            var path = @"C:\Users\222126\Desktop\";
+            foreach (var item in App.db.Product.ToArray())
+            {
+                var fullPath = path + item.Image.Trim();
+                var imageByte = File.ReadAllBytes(fullPath);
+                item.MainImage = imageByte;
+
+
+                App.db.SaveChanges();
+                Companents.PartyClass.Navigation.mainWindow = this;
+                Companents.PartyClass.Navigation.NextPage(new Companents.PartyClass.Navigation.PageComponent(new Pages.Page1(), "Список услуг"));
+                frams.Navigate(new Pages.Catalog());
+
+            }
+        }
+
+        private void OffAdminBtn_Click_1(object sender, RoutedEventArgs e)
+        {
+            App.isAdmin = false;
+            Companents.PartyClass.Navigation.NextPage(new Companents.PartyClass.Navigation.PageComponent(new Pages.Page1(), "Список услуг"));
+            Companents.PartyClass.Navigation.ClearHistory();
+        }
+
+        private void OnAdminBtn_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (PasswordPb.Password == "0000")
+            {
+                App.isAdmin = true;
+                Companents.PartyClass.Navigation.NextPage(new Companents.PartyClass.Navigation.PageComponent(new Pages.Page1(), "Услуги админа"));
+                PasswordPb.Clear();
+                Companents.PartyClass.Navigation.ClearHistory();
+            }
+        }
+
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Companents.PartyClass.Navigation.BackPage();
         }
     }
 }
