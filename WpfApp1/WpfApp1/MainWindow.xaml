@@ -15,19 +15,19 @@
             <ColumnDefinition Width="31*"/>
             <ColumnDefinition Width="369*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="1" x:Name="TitleTb" HorizontalAlignment="Center" Width="141">Магазин техники</TextBlock>
-        <Image Grid.Row="0" Grid.Column="0" Source="/Resources/LOGO_ICO.png"></Image> 
-        <TextBlock Grid.Column="1" Foreground="Red" >TechcnicalShop</TextBlock>
+        <TextBlock Grid.Column="1" x:Name="TitleTb" HorizontalAlignment="Center" Width="141" Foreground="#FFC80000" FontWeight="Bold">Магазин техники</TextBlock>
+        <Image Grid.Row="0" Grid.Column="0" Source="/Resources/LOGO_ICO.png"></Image>
+        <TextBlock Grid.Column="1" Foreground="#FFC80000" FontWeight="Bold" >TechcnicalShop</TextBlock>
         <Frame x:Name="frams" Grid.Column="1" Grid.Row="1"></Frame>
         <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
-            <Button Background="#FFE7D8D8" x:Name="OnAdminBtn" Click="OnAdminBtn_Click_1">
-                <TextBlock>Вход<LineBreak/>админа</TextBlock>
+            <Button Background="#FFC80000" x:Name="OnAdminBtn" Click="OnAdminBtn_Click_1">
+                <TextBlock Foreground="White" >Вход<LineBreak/>админа</TextBlock>
             </Button>
             <PasswordBox x:Name="PasswordPb" Padding="2" Height="35" Margin="5"></PasswordBox>
-            <Button Background="#FFE7D8D8" x:Name="OffAdminBtn" Click="OffAdminBtn_Click_1">
-                <TextBlock>Выход<LineBreak/>админа</TextBlock>
+            <Button Background="#FFC80000" x:Name="OffAdminBtn" Click="OffAdminBtn_Click_1">
+                <TextBlock Foreground="White"  >Выход<LineBreak/>админа</TextBlock>
             </Button>
-            <Button Background="#FFE7D8D8" x:Name="BackBtn" Click="BackBtn_Click">Назад</Button>
+            <Button Background="#FFC80000" x:Name="BackBtn" Click="BackBtn_Click" Foreground="White" >Назад</Button>
         </StackPanel>
 
     </Grid>

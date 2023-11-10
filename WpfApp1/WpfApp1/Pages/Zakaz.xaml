@@ -1,0 +1,61 @@
+﻿<Page x:Class="WpfApp1.Pages.Zakaz"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Zakaz">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="187*"/>
+            <RowDefinition Height="38*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="199*"/>
+            <ColumnDefinition Width="201*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Height="276">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock >Идентификатор</TextBlock>
+                <TextBox Text="{Binding ID}" IsEnabled="False" x:Name="IdTb"></TextBox>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock >Название</TextBlock>
+                <TextBox Text="{Binding Title}"  x:Name="NameTb"></TextBox>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock  >Стоимость</TextBlock>
+                <TextBox Text="{Binding Cost}" x:Name="CostTb" PreviewTextInput="CostTb_PreviewTextInput"></TextBox>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock >Длительность</TextBlock>
+                <TextBox Text="{Binding DurationInSeconds}" x:Name="TimeTb" PreviewTextInput="CostTb_PreviewTextInput"></TextBox>
+            </StackPanel>
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock  >Описание</TextBlock>
+                <TextBox Text="{Binding Description}" x:Name="OpisTb"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock >Скидка</TextBlock>
+                <TextBox Text="{Binding Discount}" x:Name="SaleTb" PreviewTextInput="CostTb_PreviewTextInput"></TextBox>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Grid.Column="0">
+            <Border BorderBrush="Blue" BorderThickness="1">
+                <Image x:Name="Image" Width="200" Height="150" Source="{Binding MainImage}"></Image>
+            </Border>
+            <Button Background="#FFC80000" x:Name="EditBtn" Click="EditBtn_Click" Content="Изменить изображение" Foreground="White" />
+            <ScrollViewer Height="150" Margin="2" HorizontalAlignment="Center" HorizontalScrollBarVisibility="Disabled">
+                <WrapPanel  Width="300" Height="100" x:Name="PhotoWp"></WrapPanel>
+            </ScrollViewer>
+            <Button Click="AddImageBtn_Click" x:Name="AddImageBtn" Background="#FFC80000" Foreground="White">Добавить изображение</Button>
+        </StackPanel>
+        <Button Grid.Row="2" Background="#FFC80000" FontWeight="Medium" >Сохранить</Button>
+    </Grid>
+</Page>
+ 

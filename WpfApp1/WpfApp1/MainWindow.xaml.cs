@@ -25,7 +25,7 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            var path = @"C:\Users\222126\Desktop\";
+            var path = @"C:\Users\222126\Pictures\";
             foreach (var item in App.db.Product.ToArray())
             {
                 var fullPath = path + item.Image.Trim();

@@ -24,11 +24,11 @@
             </StackPanel>
             
             <Image x:Name="photo" Grid.Column="0" Source="/Resources/image2.jpg" Margin="0,0,3,50" Grid.RowSpan="2"/>
-            <Button HorizontalAlignment="Left"  Grid.Row="5" Height="50" Width="100" BorderBrush="White" Background="Red">🗑</Button>
+            <Button HorizontalAlignment="Left"  Grid.Row="5" Height="50" Width="100" BorderBrush="White" Background="#FFC80000">🗑</Button>
             <Button HorizontalAlignment="Left" Margin="105,1,0,0" Grid.Row="5" Height="50" Width="50" Background="#FFF4EFEF" BorderBrush="White">🤍</Button>
             <Button HorizontalAlignment="Left" Margin="160,1,0,0" Grid.Row="5" Height="50" Width="50" Background= "#FFF4EFEF" BorderBrush="White">📈</Button>
-            <Button x:Name="CreateBtn"  Click="CreateBtn_Click" HorizontalAlignment="Left" Margin="220,1,0,0" Grid.Row="5" Height="50" Width="50" Background= "Red" BorderBrush="White">🛠</Button>
-            <Button x:Name="DeleteBtn" Click="DeleteBtn_Click" HorizontalAlignment="Left" Margin="280,1,0,0" Grid.Row="5" Height="50" Width="50" Background= "Red" BorderBrush="White">✂</Button>
+            <Button x:Name="CreateBtn"  Click="CreateBtn_Click" HorizontalAlignment="Left" Margin="220,1,0,0" Grid.Row="5" Height="50" Width="50" Background= "#FFC80000" BorderBrush="White">🛠</Button>
+            <Button x:Name="DeleteBtn" Click="DeleteBtn_Click" HorizontalAlignment="Left" Margin="280,1,0,0" Grid.Row="5" Height="50" Width="50" Background= "#FFC80000" BorderBrush="White">✂</Button>
         </Grid>
     </Border>
 </UserControl>

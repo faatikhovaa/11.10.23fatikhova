@@ -72,6 +72,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Zakaz.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\UserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -121,6 +125,9 @@
     </Compile>
     <Compile Include="Pages\Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Zakaz.xaml.cs">
+      <DependentUpon>Zakaz.xaml</DependentUpon>
     </Compile>
     <Compile Include="Resources\UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>

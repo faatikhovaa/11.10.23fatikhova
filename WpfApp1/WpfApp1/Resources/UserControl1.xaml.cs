@@ -25,6 +25,7 @@ namespace WpfApp1.Resources
         private Product service;
         public UserControl1(Product _prod)
         {
+            this.service = _prod;
             InitializeComponent();
 
 
