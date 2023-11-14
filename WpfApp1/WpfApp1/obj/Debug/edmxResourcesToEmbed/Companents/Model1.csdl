@@ -23,6 +23,7 @@
     <Property Name="MainImage" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Feedback" Relationship="Self.FK_Feedback_Product" FromRole="Product" ToRole="Feedback" />
+    <NavigationProperty Name="ProductPhoto" Relationship="HSm.FK_ProductPhoto_Product" FromRole="Product" ToRole="ProductPhoto" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -84,6 +85,11 @@
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="ProductPhoto" EntityType="HSm.ProductPhoto" />
+    <AssociationSet Name="FK_ProductPhoto_Product" Association="HSm.FK_ProductPhoto_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ProductPhoto" EntitySet="ProductPhoto" />
+    </AssociationSet>
   </EntityContainer>
   <ComplexType Name="sp_helpdiagramdefinition_Result">
     <Property Type="Int32" Name="version" Nullable="true" />
@@ -96,4 +102,25 @@
     <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
     <Property Type="Int32" Name="OwnerID" Nullable="false" />
   </ComplexType>
+  <EntityType Name="ProductPhoto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="PhotoByte" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="IdProduct" Type="Int32" />
+    <NavigationProperty Name="Product" Relationship="HSm.FK_ProductPhoto_Product" FromRole="ProductPhoto" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_ProductPhoto_Product">
+    <End Type="HSm.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="HSm.ProductPhoto" Role="ProductPhoto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductPhoto">
+        <PropertyRef Name="IdProduct" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

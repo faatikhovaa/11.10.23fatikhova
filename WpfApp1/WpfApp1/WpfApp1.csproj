@@ -64,6 +64,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Companents\PhotoUserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Catalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,7 +112,13 @@
     </Compile>
     <Compile Include="Companents\PartyClass\Navigation.cs" />
     <Compile Include="Companents\PartyClass\Product.cs" />
+    <Compile Include="Companents\PhotoUserControl1.xaml.cs">
+      <DependentUpon>PhotoUserControl1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Companents\Product.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Companents\ProductPhoto.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Companents\sp_helpdiagramdefinition_Result.cs">

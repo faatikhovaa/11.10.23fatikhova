@@ -22,31 +22,31 @@
         <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Height="276">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock >Идентификатор</TextBlock>
-                <TextBox Text="{Binding ID}" IsEnabled="False" x:Name="IdTb"></TextBox>
+                <TextBox Text="{Binding ID}" IsEnabled="False" x:Name="IdTb" TextChanged="IdTb_TextChanged"></TextBox>
             </StackPanel>
             <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock >Название</TextBlock>
-                <TextBox Text="{Binding Title}"  x:Name="NameTb"></TextBox>
+                <TextBox Text="{Binding Title}"  x:Name="NameTb" TextChanged="NameTb_TextChanged"></TextBox>
             </StackPanel>
             <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock  >Стоимость</TextBlock>
-                <TextBox Text="{Binding Cost}" x:Name="CostTb" PreviewTextInput="CostTb_PreviewTextInput"></TextBox>
+                <TextBlock>Стоимость</TextBlock>
+                <TextBox Text="{Binding Cost}" x:Name="CostTb" PreviewTextInput="CostTb_PreviewTextInput" TextChanged="CostTb_TextChanged" TextInput="CostTb_TextInput"></TextBox>
             </StackPanel>
             <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock >Длительность</TextBlock>
-                <TextBox Text="{Binding DurationInSeconds}" x:Name="TimeTb" PreviewTextInput="CostTb_PreviewTextInput"></TextBox>
+                <TextBox Text="{Binding DurationInSeconds}" x:Name="TimeTb" PreviewTextInput="CostTb_PreviewTextInput" TextChanged="TimeTb_TextChanged"></TextBox>
             </StackPanel>
             <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock  >Описание</TextBlock>
-                <TextBox Text="{Binding Description}" x:Name="OpisTb"></TextBox>
+                <TextBox Text="{Binding Description}" x:Name="OpisTb" TextChanged="OpisTb_TextChanged"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <TextBlock >Скидка</TextBlock>
-                <TextBox Text="{Binding Discount}" x:Name="SaleTb" PreviewTextInput="CostTb_PreviewTextInput"></TextBox>
+                <TextBox Text="{Binding Discount}" x:Name="SaleTb" PreviewTextInput="CostTb_PreviewTextInput" TextChanged="SaleTb_TextChanged"></TextBox>
             </StackPanel>
         </StackPanel>
         <StackPanel Orientation="Vertical" Grid.Column="0">
-            <Border BorderBrush="Blue" BorderThickness="1">
+            <Border BorderBrush="#FFC80000" BorderThickness="1">
                 <Image x:Name="Image" Width="200" Height="150" Source="{Binding MainImage}"></Image>
             </Border>
             <Button Background="#FFC80000" x:Name="EditBtn" Click="EditBtn_Click" Content="Изменить изображение" Foreground="White" />

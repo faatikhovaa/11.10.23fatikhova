@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using WpfApp1.Companents;
+using WpfApp1.Pages;
 
 namespace WpfApp1
 {
@@ -16,5 +17,6 @@ namespace WpfApp1
     {
         public static HS db = new HS();
         public static bool isAdmin = false;
+        public static Zakaz servicePage;
     }
 }

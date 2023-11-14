@@ -31,30 +31,7 @@ namespace WpfApp1.Pages
                 catalogTB.Children.Add(new UserControl1(prods));
             }
         }
-        private static decimal Oct(int id)
-        {
-            try
-            {
-                int itod = 0;
-                int count = 0;
-
-                var otzuv = App.db.Feedback.ToList();
-                foreach (var ocns in otzuv)
-                {
-                    if (ocns.ProductId==id)
-                    {
-                        itod = ocns.Evaluation;
-                        count++;
-                    }
-
-                }
-                return (itod / count);
-            }
-            catch
-            {
-                return 0;
-            }
-        }
+       
 
     }
 }
