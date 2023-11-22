@@ -73,7 +73,7 @@ namespace WpfApp1.Pages
             ServiceWp.Children.Clear();
             foreach (var service in services)
             {
-                ServiceWp.Children.Add(new PhotoUserControl1(service));
+                ServiceWp.Children.Add(new UserControl1(service));
             }
         }
 

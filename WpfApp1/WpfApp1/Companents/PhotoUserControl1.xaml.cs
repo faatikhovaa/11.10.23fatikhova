@@ -20,30 +20,30 @@ namespace WpfApp1.Companents
     /// </summary>
     public partial class PhotoUserControl1 : UserControl
     {
-        Product product;
-        public PhotoUserControl1(Product _product)
+        ProductPhoto productPhoto;
+        public PhotoUserControl1(ProductPhoto _productPhoto)
         {
             InitializeComponent();
-            product = _product;
-            this.DataContext = product;
+            productPhoto = _productPhoto;
+            this.DataContext = productPhoto;
 
         }
 
         private void MainBtn_Click(object sender, RoutedEventArgs e)
         {
-            //var selPhoto = product.ProductPhoto;
-            //servicePhoto.PhotoByte = servicePhoto.Service.MainImage;
-            //servicePhoto.Service.MainImage = selPhoto;
-            //App.servicePage.RefreshPhoto();
-            //App.db.SaveChanges();
+            var selPhoto = productPhoto.PhotoByte;
+            productPhoto.PhotoByte = productPhoto.Product.MainImage;
+            productPhoto.Product.MainImage = selPhoto;
+            App.servicePage.RefreshPhoto();
+            App.db.SaveChanges();
 
         }
 
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
-            //App.db.ServicePhoto.Remove(servicePhoto);
-            //App.db.SaveChanges();
-            //App.servicePage.RefreshPhoto();
+            App.db.ProductPhoto.Remove(productPhoto);
+            App.db.SaveChanges();
+            App.servicePage.RefreshPhoto();
         }
     }
     

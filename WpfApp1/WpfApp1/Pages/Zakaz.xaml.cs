@@ -58,9 +58,9 @@ namespace WpfApp1.Pages
         public void RefreshPhoto()
         {
             PhotoWp.Children.Clear();
-            foreach (var product in App.db.Product)
+            foreach (var productPhoto in service.ProductPhoto)
             {
-                PhotoWp.Children.Add(new PhotoUserControl1(product));
+                PhotoWp.Children.Add(new PhotoUserControl1(productPhoto));
             }
             BitmapImage bitmapImage = new BitmapImage();
             MemoryStream byteStream = new MemoryStream(service.MainImage);

@@ -44,8 +44,9 @@ namespace WpfApp1
         private void OffAdminBtn_Click_1(object sender, RoutedEventArgs e)
         {
             App.isAdmin = false;
-            Companents.PartyClass.Navigation.NextPage(new Companents.PartyClass.Navigation.PageComponent(new Pages.Page1(), "Список услуг"));
             Companents.PartyClass.Navigation.ClearHistory();
+            Companents.PartyClass.Navigation.NextPage(new Companents.PartyClass.Navigation.PageComponent(new Pages.Page1(), "Список услуг"));
+        
         }
 
         private void OnAdminBtn_Click_1(object sender, RoutedEventArgs e)
@@ -53,9 +54,10 @@ namespace WpfApp1
             if (PasswordPb.Password == "0000")
             {
                 App.isAdmin = true;
-                Companents.PartyClass.Navigation.NextPage(new Companents.PartyClass.Navigation.PageComponent(new Pages.Page1(), "Услуги админа"));
                 PasswordPb.Clear();
                 Companents.PartyClass.Navigation.ClearHistory();
+                Companents.PartyClass.Navigation.NextPage(new Companents.PartyClass.Navigation.PageComponent(new Pages.Page1(), "Услуги админа"));
+            
             }
         }
 

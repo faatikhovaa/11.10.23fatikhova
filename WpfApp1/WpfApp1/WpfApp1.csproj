@@ -80,7 +80,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\UserControl1.xaml">
+    <Page Include="Companents\UserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -139,7 +139,7 @@
     <Compile Include="Pages\Zakaz.xaml.cs">
       <DependentUpon>Zakaz.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Resources\UserControl1.xaml.cs">
+    <Compile Include="Companents\UserControl1.xaml.cs">
       <DependentUpon>UserControl1.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">

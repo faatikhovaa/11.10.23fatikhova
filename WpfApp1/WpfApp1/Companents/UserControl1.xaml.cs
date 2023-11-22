@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfApp1.Companents;
+using WpfApp1.Companents.PartyClass;
 
 namespace WpfApp1.Resources
 {
@@ -59,7 +60,7 @@ namespace WpfApp1.Resources
 
         private void CreateBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Red");
+            Navigation.NextPage(new Navigation.PageComponent(new Pages.Zakaz(service), "Редактировать"));
         }
 
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
@@ -74,6 +75,19 @@ namespace WpfApp1.Resources
                 App.db.SaveChanges();
 
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            foreach(ProductZakazUc productZakazUc in App.KorzinaWp.Children)
+            {
+                if(productZakazUc.product == product)
+                {
+                    productZakazUc.KolvoTb.Text = (productZakazUc.kolvo = 1.).ToString();
+                    return;
+                }
+            }
+            App.
         }
     }
 }
